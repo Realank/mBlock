@@ -954,5 +954,8 @@
 	"Microsoft Cognitive Service Setting": "微軟認知服務設置",
 	"Ellipse": "橢圓",
 	"New Project": "新建專案",
-	"Serial port is not connected, please disconnect retry.": "Serial port is not connected, please disconnect retry."
+	"Serial port is not connected, please disconnect retry.": "Serial port is not connected, please disconnect retry.",
+	"About mBlock": "About 锐蓝块块",
+	"realankBlock": "锐蓝块块",
+	"About realankBlock": "About 锐蓝块块"
 }

@@ -1,10 +1,8 @@
 {
-  "name": "mBlock",
+  "name": "realankBlock",
   "version": "4.0.0",
-  "description": "mblock 4.0",
+  "description": "锐蓝块块4.0",
   "main": "./app/main.js",
-  "homepage": "http://mblock.cc",
-  "email": "tec-support@makeblock.com",
   "scripts": {
     "rebuild-serialport": "electron-rebuild -f -w serialport",
     "rebuild-hid": "electron-rebuild -f -w node-hid",
@@ -17,13 +15,12 @@
     "dist-windows-store": "build --windows appx",
     "postinstall": "install-app-deps"
   },
-  "repository": "https://git.oschina.net/makeblock/mblock-for-myh",
   "keywords": [
-    "mBlock"
+    "realankBlock"
   ],
   "author": {
-    "name": "Makeblock Co., Ltd.",
-    "email": "tec-support@makeblock.com"
+    "name": "Realank",
+    "email": "Realank@126.com"
   },
   "license": "GPL",
   "devDependencies": {
@@ -42,7 +39,7 @@
     "i18n": "^0.8.3"
   },
   "build": {
-    "appId": "cc.mblock",
+    "appId": "com.realank",
     "files": ["app", "i18n", "node_modules"],
     "extraResources": ["plugins", "tools", "web"],
     "appx": {

@@ -457,7 +457,7 @@ function AppMenu(app){
                 submenu: [
                     {
                         role: 'about',
-                        label:_translator.map('About mBlock')
+                        label:_translator.map('About realankBlock')
                     },
                     {
                         role: 'quit',
