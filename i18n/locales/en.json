@@ -59,5 +59,6 @@
 	"Cannot connect to serial port. Please check your USB connection or restart your computer.": "Cannot connect to serial port. Please check your USB connection or restart your computer.",
 	"Connected": "Connected",
 	"About mBlock": "About mBlock",
-	"Quit": "Quit"
+	"Quit": "Quit",
+	"About realankBlock": "About realankBlock"
 }

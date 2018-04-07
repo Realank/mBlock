@@ -103,24 +103,24 @@ function AppMenu(app){
                     {
                         type: 'separator'
                     },
-                    {
-                        name:'Hide stage layout',
-                        label: _translator.map('Hide stage layout'),
-                        type:"checkbox",
-                        checked:_stage.isStageMode("hide stage layout"),
-                        click: function (item, focusedWindow) {
-                            _stage.changeStageMode("hide stage layout");
-                        }
-                    },
-                    {
-                        name:'Small stage layout',
-                        label: _translator.map('Small stage layout'),
-                        type:"checkbox",
-                        checked:_stage.isStageMode("small stage layout"),
-                        click: function (item, focusedWindow) {
-                            _stage.changeStageMode("small stage layout");
-                        }
-                    },
+                    // {
+                    //     name:'Hide stage layout',
+                    //     label: _translator.map('Hide stage layout'),
+                    //     type:"checkbox",
+                    //     checked:_stage.isStageMode("hide stage layout"),
+                    //     click: function (item, focusedWindow) {
+                    //         _stage.changeStageMode("hide stage layout");
+                    //     }
+                    // },
+                    // {
+                    //     name:'Small stage layout',
+                    //     label: _translator.map('Small stage layout'),
+                    //     type:"checkbox",
+                    //     checked:_stage.isStageMode("small stage layout"),
+                    //     click: function (item, focusedWindow) {
+                    //         _stage.changeStageMode("small stage layout");
+                    //     }
+                    // },
                     {
                         name:'Turbo mode',
                         label: _translator.map('Turbo mode'),
@@ -158,51 +158,51 @@ function AppMenu(app){
                             }
                         }]
                     },
-                    {
-                        name:'Bluetooth',
-                        label: _translator.map('Bluetooth'),
-                        submenu: [
-                            {
-                                type:"separator"
-                            },
-                            {
-                                name:"Discover",
-                                label:_translator.map("Discover"),
-								enabled : true,
-                                click: function (item, focusedWindow) { // focusedWindow : BrowserWindow
-								    item.enabled = false; // 禁掉"发现"按钮
-								    //item.label = _translator.map('Discovering');			
-                                    _app.getBluetooth().discover(item);
-                                }
-                            },
-                            {
-                                type:"separator"
-                            },
-                            {
-                                name:"Clear Bluetooth",
-                                label:_translator.map("Clear Bluetooth"),
-                                click:function(item,focusedWindow){
-                                    _app.getBluetooth().clear();
-                                }
-                            }
-                        ]
-                    },
-                    {
-                        name:'2.4G Serial',
-                        label: _translator.map('2.4G Serial'),
-                        submenu: [
-                            {
-                                name:"Connect",
-                                label:_translator.map("Connect"),
-                                type:"checkbox",
-                                checked:_hid.isConnected(),
-                                click: function (item, focusedWindow) {
-                                    _hid.connect();
-                                    self.update();  //根据连接成功与否来更新菜单
-                                }
-                            }
-                        ]
-                    },
+        //             {
+        //                 name:'Bluetooth',
+        //                 label: _translator.map('Bluetooth'),
+        //                 submenu: [
+        //                     {
+        //                         type:"separator"
+        //                     },
+        //                     {
+        //                         name:"Discover",
+        //                         label:_translator.map("Discover"),
+								// enabled : true,
+        //                         click: function (item, focusedWindow) { // focusedWindow : BrowserWindow
+								//     item.enabled = false; // 禁掉"发现"按钮
+								//     //item.label = _translator.map('Discovering');			
+        //                             _app.getBluetooth().discover(item);
+        //                         }
+        //                     },
+        //                     {
+        //                         type:"separator"
+        //                     },
+        //                     {
+        //                         name:"Clear Bluetooth",
+        //                         label:_translator.map("Clear Bluetooth"),
+        //                         click:function(item,focusedWindow){
+        //                             _app.getBluetooth().clear();
+        //                         }
+        //                     }
+        //                 ]
+        //             },
+        //             {
+        //                 name:'2.4G Serial',
+        //                 label: _translator.map('2.4G Serial'),
+        //                 submenu: [
+        //                     {
+        //                         name:"Connect",
+        //                         label:_translator.map("Connect"),
+        //                         type:"checkbox",
+        //                         checked:_hid.isConnected(),
+        //                         click: function (item, focusedWindow) {
+        //                             _hid.connect();
+        //                             self.update();  //根据连接成功与否来更新菜单
+        //                         }
+        //                     }
+        //                 ]
+        //             },
                     {
                         type:"separator"
                     },
@@ -233,112 +233,113 @@ function AppMenu(app){
                 name:'Boards',
                 label: _translator.map('Boards'),
                 submenu: [
-                    {
-                        name:"Arduino",
-                        label:"Arduino",
-                        enabled:false
-                    },
-                    {
-                        name:"arduino_uno",
-                        label:"Arduino Uno",
-                        type:"checkbox",
-                        checked:_boards.selected("arduino_uno"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
-                    {
-                        name:"arduino_leonardo",
-                        label:"Arduino Leonardo",
-                        type:"checkbox",
-                        checked:_boards.selected("arduino_leonardo"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
-                    {
-                        name:"arduino_nano328",
-                        label:"Arduino Nano ( mega328 )",
-                        type:"checkbox",
-                        checked:_boards.selected("arduino_nano328"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
-                    {
-                        name:"arduino_mega1280",
-                        label:"Arduino Mega 1280",
-                        type:"checkbox",
-                        checked:_boards.selected("arduino_mega1280"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
-                    {
-                        name:"arduino_mega2560",
-                        label:"Arduino Mega 2560",
-                        type:"checkbox",
-                        checked:_boards.selected("arduino_mega2560"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
-                    {
-                        type:"separator"
-                    },
+                    // {
+                    //     name:"Arduino",
+                    //     label:"Arduino",
+                    //     enabled:false
+                    // },
+                    // {
+                    //     name:"arduino_uno",
+                    //     label:"Arduino Uno",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("arduino_uno"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
+                    // {
+                    //     name:"arduino_leonardo",
+                    //     label:"Arduino Leonardo",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("arduino_leonardo"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
+                    // {
+                    //     name:"arduino_nano328",
+                    //     label:"Arduino Nano ( mega328 )",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("arduino_nano328"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
+                    // {
+                    //     name:"arduino_mega1280",
+                    //     label:"Arduino Mega 1280",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("arduino_mega1280"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
+                    // {
+                    //     name:"arduino_mega2560",
+                    //     label:"Arduino Mega 2560",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("arduino_mega2560"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
+                    // {
+                    //     type:"separator"
+                    // },
                     {
                         name:"Makeblock",
-                        label:"Makeblock",
+                        label:"机器人",//Makeblock
                         enabled:false
                     },
-                    {
-                        name:"me/orion_uno",
-                        label:"Starter/Ultimate (Orion)",
-                        type:"checkbox",
-                        checked:_boards.selected("me/orion_uno"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
-                    {
-                        name:"me/uno_shield_uno",
-                        label:"Me Uno Shield",
-                        type:"checkbox",
-                        checked:_boards.selected("me/uno_shield_uno"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
+                    // {
+                    //     name:"me/orion_uno",
+                    //     label:"Starter/Ultimate (Orion)",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("me/orion_uno"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
+                    // {
+                    //     name:"me/uno_shield_uno",
+                    //     label:"Me Uno Shield",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("me/uno_shield_uno"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
                     {
                         name:"me/mbot_uno",
-                        label:"mBot (mCore)",
+                        label:"编程小车",
                         type:"checkbox",
                         checked:_boards.selected("me/mbot_uno"),
                         click:function(item, focusedWindow){
                             _boards.selectBoard(item.name);
                         }
                     },
-                    {
-                        name:"me/auriga_mega2560",
-                        label:"mBot Ranger (Auriga)",
-                        type:"checkbox",
-                        checked:_boards.selected("me/auriga_mega2560"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
-                    {
-                        name:"me/mega_pi_mega2560",
-                        label:"Ultimate 2.0 (Mega Pi)",
-                        type:"checkbox",
-                        checked:_boards.selected("me/mega_pi_mega2560"),
-                        click:function(item, focusedWindow){
-                            _boards.selectBoard(item.name);
-                        }
-                    },
-                    {
-                        type:"separator"
-                    }/*,
+                    // {
+                    //     name:"me/auriga_mega2560",
+                    //     label:"mBot Ranger (Auriga)",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("me/auriga_mega2560"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
+                    // {
+                    //     name:"me/mega_pi_mega2560",
+                    //     label:"Ultimate 2.0 (Mega Pi)",
+                    //     type:"checkbox",
+                    //     checked:_boards.selected("me/mega_pi_mega2560"),
+                    //     click:function(item, focusedWindow){
+                    //         _boards.selectBoard(item.name);
+                    //     }
+                    // },
+                    // {
+                    //     type:"separator"
+                    // }
+                    /*,
                     {
                         name:"Others",
                         label: _translator.map('Others'),
